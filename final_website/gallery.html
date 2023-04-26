@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="style1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="page">
+        <section class="header">
+            <div id="logo">
+                <h1 align="center">Shibanes</h1>
+            </div>
+            <nav>
+                <div id="top">
+                    <ul>
+                        <B>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="gallery.html">GALLERY</a></li>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                            <li><a href="login.html">LOG IN</a></li>
+                        </B>
+                    </ul>
+                </div>
+            </nav>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <a href="acoustic.webp">
+                        <div id="img1" title="Acoustic"></div>
+                    </a>
+                    <div class="text">ACOUSTIC</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <a href="electric.jpeg" title="Electric">
+                        <div id="img2"></div>
+                    </a>
+                    <div class="text">ELECTRIC</div>
+                </div>
+
+
+                <div class="mySlides fade">
+                    <a href="basses.webp" title="Basses">
+                        <div id="img3"></div>
+                    </a>
+                    <div class="text">BASSES</div>
+                </div>
+
+
+                <div class="mySlides fade">
+                    <a href="accesories.jpeg" title="Accessories">
+                        <div id="img4"></div>
+                    </a>
+                    <div class="text">ACCESSORIES</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+            </div>
+            <footer>
+                <div class="main-content">
+                    <div class="left box">
+                        <h2> About Us</h2>
+                        <div class="content">
+                            <p>We sell guitars.</p>
+                            <div class="social">
+                                <a href="about.html">
+                                    <img src="uhuh.png" alt="Image not found.">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center box">
+                        <h2>Adress</h2>
+                        <div class="content">
+                            <div class="place">
+                                <p>Kathmandu</p>
+                            </div>
+                            <div class="phone">
+                                <p>Bhaktapur</p>
+                            </div>
+                            <div class="email">
+                                <p>Lalitpur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right box">
+                        <h2>Contact Us</h2>
+                        <div class="content">
+                            <div class="contct">
+                                <a href="contact.html">Here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+        </section>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
